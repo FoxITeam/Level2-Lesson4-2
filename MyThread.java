@@ -3,10 +3,18 @@ package ru.foxit.grayfox;
 public class MyThread extends Thread {
     MyThread(String name) {
         super(name);
+        start();
     }
 
     @Override
     public void run() {
-        System.out.println(getName());
+        try {
+            sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // release resources
+        // close DB
     }
 }
